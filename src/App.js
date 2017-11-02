@@ -7,7 +7,7 @@ class App extends Component {
       {
         name: 'ReactJs',
         time: '30h',
-        free: true,
+        free: false,
         desc: "ReactJs is very"
       },
       {

@@ -6,6 +6,7 @@ class Course extends Component {
   constructor(props) {
     super(props);
     this.handleClick3 = this.handleClick3.bind(this);
+    this.registerCourse = this.registerCourse.bind(this);
   }
 
   handleClick1 () {
@@ -20,18 +21,29 @@ class Course extends Component {
     alert(this.props.name);
   }
 
+  registerCourse () {
+    console.log(this.refs.username.value);
+  }
+
   showButtonFree() {
     const isFree = this.props.free;
     //console.log(" is Free: ", isFree);
 
     if(isFree === true) {
-      return <div className="panel-footer">
-        <div className="btn-group">
-          <button onClick={this.handleClick1} type="button" className="btn btn-warning">Xem 1</button>
-          <button onClick={() => this.handleClick2("View2") } type="button" className="btn btn-danger">Xem 2</button>
-          <button onClick={this.handleClick3} type="button" className="btn btn-success">Xem 3</button>
-        </div>
+      return <div className="btn-group">
+        <button onClick={this.handleClick1} type="button" className="btn btn-warning">Xem 1</button>
+        <button onClick={() => this.handleClick2("View2") } type="button" className="btn btn-danger">Xem 2</button>
+        <button onClick={this.handleClick3} type="button" className="btn btn-success">Xem 3</button>
       </div>
+    } else {
+        return (
+          <div className="input-group">
+            <span className="input-group-btn">
+              <button onClick={this.registerCourse} className="btn btn-info" type="button">Register!</button>
+            </span>
+            <input type="text" className="form-control" placeholder="Username" ref="username" />
+          </div>
+        )
     }
   }
   render() {
@@ -50,7 +62,9 @@ class Course extends Component {
              <Lesson name="Item3"></Lesson>
             </ul>
           </div>
-          { this.showButtonFree() }
+          <div className="panel-footer">
+            { this.showButtonFree() }
+          </div>
         </div>
       </div>
     );
