@@ -3,11 +3,34 @@ import Course from './components/Course';
 
 class App extends Component {
   render() {
+    const items =[
+      {
+        name: 'ReactJs',
+        time: '30h',
+        free: true,
+        desc: "ReactJs is very"
+      },
+      {
+        name: 'Angular 4x',
+        time: '50h',
+        free: true,
+        desc: "Amgular 4x Pro"
+      },
+      {
+        name: 'NodeJs',
+        time: '40h',
+        free: true,
+        desc: "Node Js Api"
+      }
+    ];
+
+    const eleCourses = items.map((item,index) =>
+      <Course key = {index} name={item.name} time={item.time} free={item.free} desc={item.desc}></Course>
+    );
+
     return (
       <div className="row">
-        <Course name="ReactJs" time="40h" free={true}></Course>
-        <Course name="Angular 4x" time="50h" free={false}></Course>
-        <Course name="TypeScript" time="45h" free={true}></Course>
+        {eleCourses}
       </div>
     );
   }
