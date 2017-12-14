@@ -14,7 +14,7 @@ class App extends Component {
         name: 'Angular 4x',
         time: '50h',
         free: true,
-        desc: "Amgular 4x Pro"
+        desc: "Angular 4x Pro"
       },
       {
         name: 'NodeJs',
