@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Course from './components/Course';
-
+import Lifecycle from './components/Lifecycle';
 class App extends Component {
   render() {
     const items =[
@@ -22,9 +22,10 @@ class App extends Component {
         free: true,
         desc: "Node Js Api"
       }
+     
     ];
 
-    const eleCourses = items.map((item,index) =>
+    let eleCourses = items.map((item,index) =>
       <Course key = {index} name={item.name} time={item.time} free={item.free} desc={item.desc}></Course>
     );
 

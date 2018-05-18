@@ -27,7 +27,7 @@ class Course extends Component {
 
   showButtonFree() {
     const isFree = this.props.free;
-    //console.log(" is Free: ", isFree);
+    console.log(" is Free: ", isFree);
 
     if(isFree === true) {
       return <div className="btn-group">
